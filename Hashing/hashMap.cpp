@@ -28,10 +28,10 @@ int main(){
 
     for(auto it : d){
         cout<<it.first<<"->->"<<it.second<<endl;
-
     }
 
-
 }
+
+//now you can have code for fetching the elements
 
 

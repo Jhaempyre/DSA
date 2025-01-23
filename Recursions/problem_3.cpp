@@ -22,7 +22,7 @@ int main(){
 }
 
 
-//trying another method which will also help in acknowleding the actual working of recursion stack 
+//trying another method which will also help in acknowleding the actual working of recursion stack (using backtracking)
 /*
 #include<iostream>
 using namespace std;

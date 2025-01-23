@@ -26,3 +26,7 @@ int main(){
 
 
 //can be done using unordered map which will just not sort it
+
+
+
+//now you can have code for fetching the elements
