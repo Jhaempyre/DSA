@@ -1,5 +1,5 @@
 //to find fiboanci number
-/*we can use multiple method for fibonacci number the thing is f(n)= f(n-1)+f(n) can be done from vvarious 
+/*we can use multiple method for fibonacci number the thing is f(n)= f(n-1)+f(n-2) can be done from vvarious 
 iterative process since we are in recursion we tried to had this recursive appproach.*/
 
 #include<iostream>
