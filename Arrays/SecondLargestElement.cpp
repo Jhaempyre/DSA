@@ -5,7 +5,7 @@
 
 using namespace std ; 
 
-
+//this function time complexity is O(n)
 int SecondLargest(vector <int> &v){
     int max1 =v[0]; int max2 = v[0];
     //cout<<"control is here";
