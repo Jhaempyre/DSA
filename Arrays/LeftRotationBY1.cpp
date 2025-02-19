@@ -31,7 +31,7 @@ int RotateBy_1(int arr[],int n ){
 }
 
 int main(){
-    cout<<"Enter the array";
+    cout<<"Enter the length of array";
     int n ; 
     cin>>n;
     int arr[n] ;
