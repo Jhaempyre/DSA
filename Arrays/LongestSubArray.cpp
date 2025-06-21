@@ -6,25 +6,8 @@
 using namespace std ;
 
 
-/*int longestSubarray(vector<int>&nums, int k){
-    int left = 0 ;
-    int right = 0 ;
 
-    int sum = nums[0];
-    int size = nums.size();
-    
-    while(right<size){
-        right++;
-        sum=sum+nums[right];
-        if((right<size)&&(sum>k)){
-            left++;
-        }
-    }
-        
-    }*/
-
-
-//Bruteforce approach with thora dimag     
+//Bruteforce approach with thora dimag (will work for negative elements too)    
 int longestSubarray(vector<int>&nums, int l){
     int length = 0;
     int n = nums.size();
@@ -47,15 +30,19 @@ int longestSubarray(vector<int>&nums, int l){
     return length ;
 } 
 
-//using maps and the array 
+//using maps and the array (//this works for negative array element too)
 int longestSubarrayUsingMap(vector<int>&nums, int l){
     map<int,int> m;
     int n = nums.size();
+    m[0]=-1;
     int sum = 0 ; 
     int length = 0 ;
     for (int i = 0; i <n ; i++){
         sum = sum + nums[i];
-        m[sum]=i;
+         // if sum not present, store first occurrence
+        if (m.find(sum) == m.end()) {
+            m[sum] = i;
+        }
         int leftover = sum - l;
         auto it = m.find(leftover); //this find return an iterator if succes else return m.end() 
         if(it!=m.end()){
@@ -72,6 +59,7 @@ int longestSubarrayUsingMap(vector<int>&nums, int l){
       return length ; 
 }
 
+//using pointers (Doesn't work for negative elements)
 int longestSubarrayUsingTwoPointers(vector<int>&nums, int l){
     int left=0;
     int right = 0 ; 
@@ -119,12 +107,12 @@ int main(){
     }
     cout<<endl;
 
+    //uncomment the line you want to use ;-
     //int length = longestSubarray(ver,k);
-
     //cout<<length<<endl;
     //int length = longestSubarrayUsingMap(ver,k);
     //cout<<length<<endl;
-    int length = longestSubarrayUsingTwoPointers(ver,k);
-    cout<<length<<endl;
+    //int length = longestSubarrayUsingTwoPointers(ver,k);
+    //cout<<length<<endl;
 
 }
