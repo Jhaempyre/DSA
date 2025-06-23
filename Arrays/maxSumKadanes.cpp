@@ -41,3 +41,8 @@ int main(){
     }
     cout<<endl;
 }
+
+
+
+//in some case you may be askd to print the array in that case you have to keep track of last time the sum became zero in that if clause also when the sum becomes zero
+//at that pont you have to keep track of that .. and boom print it .
