@@ -22,6 +22,14 @@ class Node{
 };
 
 
+void print(Node* head ){
+    while(head!=NULL){
+        cout<<head->data<<" -->  ";
+        head=head->next;
+    }
+}
+
+
 Node*  ConvertArray2LL(vector<int> &arr){
     Node* head =new Node(arr[0]);
     Node* mover = head;
@@ -40,11 +48,6 @@ int main(){
     vector<int> vect = {15,2,3,4,5,6};
     Node* head = ConvertArray2LL(vect);
     //Traversing through out thelikend list
-    Node* temp = head ;
-
-    while(temp != nullptr){
-        cout<<temp->data<<" ";
-        temp = temp->next;
-    }
+    print(head);
 
 }
