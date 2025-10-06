@@ -84,18 +84,5 @@ int main(){
 
     cout<<FindMiddle(head)->data;
 
-    reverse(vect.begin(),vect.end());
-
-    for(int i = 0 ; i<6 ; i++){
-        cout<<vect[i];
-    };
-    
-
-    
-
-
-
-    
-
 }
 

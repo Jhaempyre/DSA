@@ -23,10 +23,6 @@ int sqrt(int n){
 }
 
 
-
-
-
-
 int main(){
  int n ; 
 
