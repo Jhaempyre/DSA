@@ -48,21 +48,14 @@ Node* deleteMiddle(Node* head){
     Node* slow = head ;
     Node* fast = head ;
     Node* prev = NULL ; 
-    int count=0 ;
-    
 
     while(fast!=nullptr&&fast->next!=nullptr){
-        count++;       
-        cout<<"interuptionstarted"<<endl;
-        print(prev);  
-        cout<<"ended"<<endl;
         prev= slow ; 
         slow= slow->next;
         fast= fast->next->next;  
              
     };
     //since we are here this mean we have exactly get the middle but we need to stay at a step before 
-    count =  prev->data;
     //now we have landed just before the middle one in this case 
     Node* temp = prev->next;
     prev->next=prev->next->next;
@@ -75,7 +68,7 @@ Node* deleteMiddle(Node* head){
 
 int main(){
 
-    vector<int> vect = {2,1};
+    vector<int> vect = {1};
     Node* head = ConvertArray2LL(vect);
     //Traversing through out thelikend list
     print(head);
