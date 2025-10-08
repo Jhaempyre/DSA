@@ -67,6 +67,13 @@ return head ;
 }
 
 
+//print a linked list 
+void print(Node* head ){
+    while(head!=NULL){
+        cout<<head->data<<" ";
+        head=head->next;
+    }
+}
 //Delete from kth position
 Node* DeleteFromK(Node* head , int k ){
     int count = 1;
@@ -80,6 +87,9 @@ Node* DeleteFromK(Node* head , int k ){
             free(temp);
             break;
         }
+        cout<<"intl"<<endl;
+        print(prev);
+        cout<<"end"<<endl;
         prev=temp;
         temp=temp->next;
         count++;
@@ -121,13 +131,7 @@ Node*  ConvertArray2LL(vector<int> &arr){
     return head;
 }
 
-//print a linked list 
-void print(Node* head ){
-    while(head!=NULL){
-        cout<<head->data<<" ";
-        head=head->next;
-    }
-}
+
 
 int main(){
 
