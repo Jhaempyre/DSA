@@ -54,7 +54,7 @@ Node* GetMiddle(Node* head){
     }
 
     Node* slow = head ;
-    Node* fast = head ;
+    Node* fast = head->next ;
 
     while((fast!=NULL)&&(fast->next!=nullptr)){
         slow= slow->next;
@@ -127,16 +127,14 @@ Node* SortLL(Node* head){
 
 int main(){
 
-    vector<int> vect = {15,5,4,3,2,1,6};
+    vector<int> vect = {15,2,3,4,5,6};
     Node* head = ConvertArray2LL(vect);
     //Traversing through out thelikend list
     print(head);
 
+
     // print the sorted Linked list  ; 
     Node* sortedLL = SortLL(head);
-    cout<<"heheh";
-    if(sortedLL==nullptr){
-        cout<<"hatt dallee";
-    }
+    
     print(sortedLL);
 }

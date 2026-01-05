@@ -49,6 +49,10 @@ Node* deleteMiddle(Node* head){
     Node* fast = head ;
     Node* prev = NULL ; 
 
+    if (head == nullptr || head->next == nullptr) {
+        return nullptr;  // No middle to delete, return empty list
+    }
+
     while(fast!=nullptr&&fast->next!=nullptr){
         prev= slow ; 
         slow= slow->next;
@@ -59,7 +63,7 @@ Node* deleteMiddle(Node* head){
     //now we have landed just before the middle one in this case 
     Node* temp = prev->next;
     prev->next=prev->next->next;
-    free(temp);
+    delete(temp);
     return head;
   // reaarange the ll 
     // return the ll

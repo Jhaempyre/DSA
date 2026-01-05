@@ -18,48 +18,39 @@ class Node{
         next = next1;
     }
 
-
-
-
-
 };
 
 
 
 Node* RemoveNodeFromBackOfLL(Node* head , int n ){
-    Node* slow = head ;
-    Node* fast = head ;
+     // Create two pointers, fastp and slowp
+    Node* fastp = head;
+    Node* slowp = head;
 
-    
-    return slow ;
-}
+    // Move the fastp pointer N nodes ahead
+    for (int i = 0; i < n; i++)
+        fastp = fastp->next;
 
-Node* deleteatk(Node* head , int k ){
-    int count = 1 ;
-    Node* temp = head ;
-    Node* prev = NULL;
+    // If fastp becomes NULL,
+    // the Nth node from the end is the head
+    if (fastp == NULL)
+        return head->next;
 
-
-
-    while(temp!=NULL){
-
-        if(count==k){
-            //deletion begins;
-            Node* ekaur = temp->next;
-            temp->next= temp->next->next;
-            free(ekaur);
-            break ;
-        }
-
-        prev= temp ;
-        temp = temp->next ;
-
-        count++;
-    
+    // Move both pointers until fastp reaches the end
+    while (fastp->next != NULL) {
+        fastp = fastp->next;
+        slowp = slowp->next;
     }
-    return head ;
 
+    // Delete the Nth node from the end
+    Node* delNode = slowp->next;
+    slowp->next = slowp->next->next;
+    delete delNode;
+    return head;
+   
 }
+
+
 
 
 Node* ConvertArray2LL(vector<int> &arr){
@@ -92,8 +83,6 @@ int main(){
     Node* head =ConvertArray2LL(vect);
     cout<<"your converted array to linked list is:\t";
     print(head);
-    Node* delhead = deleteatk(head,4);
-    print(delhead);
     cout<<endl;
     Node* deletedhead = RemoveNodeFromBackOfLL(head,2);
     cout<<"your deleted linked list is here man , i hope you like it :\t";
