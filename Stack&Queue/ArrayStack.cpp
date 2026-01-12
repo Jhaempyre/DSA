@@ -1,4 +1,5 @@
 #include<iostream>
+#include<bits/stdc++.h>
 using namespace std ;
 
 
@@ -57,5 +58,33 @@ public:
 };
 
 int main(){
+    int size = 100;
+    ArrayStack* as = new ArrayStack(size);
+    //as->push(17);
+    //as->push(19);
+    cout<<"THE Stack is here"<<endl;
+    vector<string> commands = {"Arraystack","push","push","pop","top","isEmpty"};
+    vector<vector<int>> inputs = {{},{5},{},{},{}};
+
+
+    //running the commands here ;
+
+    for(int i = 0 ; i <commands.size();i++){
+        if(commands[i]=="push"){
+            as->push(inputs[i][0]);
+            cout<<"null";
+        }else if (commands[i] == "pop") {
+            cout << as->pop() << " ";
+        }else if (commands[i] == "top") {
+            cout << as->top() << " ";
+        }else if (commands[i] == "isEmpty") {
+            cout << (as->isEmpty() ? "true" : "false") << " ";
+        }
+        else if (commands[i] == "ArrayStack") {
+            cout << "null ";
+        }
+    }
+
+return 0 ;
 
 }
